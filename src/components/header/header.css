@@ -1,5 +1,5 @@
 header {
-    height:100vh;
+    height:800px;
     padding-top: 7rem;
     overflow: hidden;
 }
@@ -70,7 +70,7 @@ header {
 
 @media screen and (max-width:1024px) {
     header {
-        height: 100vh;
+        height: 800px;
          
     }
 }
@@ -79,7 +79,7 @@ header {
 
 @media screen and (max-width:600px) {
     header {
-        height: 130vh;
+        height: 800px;
         
     }
 

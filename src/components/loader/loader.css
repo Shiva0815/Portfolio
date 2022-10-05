@@ -1,0 +1,95 @@
+.loader {
+    backdrop-filter: blur(4px);
+}
+
+header {
+    height: 100vh;
+    padding-top: 7rem;
+    overflow: hidden;
+}
+
+.loader_container {
+    text-align: center;
+    height: 100%;
+    position: relative;
+}
+
+.arrow {
+    box-sizing: border-box;
+    height: 4rem;
+    width: 4rem;
+    border-style: solid;
+    border-color: var(--color-primary);
+    border-width: 0px 1px 1px 0px;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+    position: fixed;
+    bottom: 3rem;
+    left: 49%;
+    animation: glow 500ms infinite alternate ease-in-out;
+
+}
+
+.arrow:hover {
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+    animation-play-state: paused ;
+}
+
+
+@keyframes glow {
+    from {
+        border-bottom-width: 0px;
+        border-right-width: 0px;
+    }
+
+    to {
+        border-bottom-width: 4px;
+        border-right-width: 4px;
+    }
+}
+
+
+
+
+
+/*======  Me  =========*/
+
+.me {
+    background: linear-gradient(var(--color-primary), transparent);
+    width: 22rem;
+    height: 30rem;
+    position: absolute;
+    left: calc(50% - 11rem);
+    margin-top: 4rem;
+    border-radius: 12rem 12rem 0 0;
+    overflow: hidden;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+
+/*===================media queries (medium divecce)==============*/
+
+@media screen and (max-width:1024px) {
+    loader {
+        height: 800px;
+
+    }
+
+    .arrow {
+        left: 47%;
+    }
+}
+
+/*===================media queries (small divecce)==============*/
+
+@media screen and (max-width:600px) {
+    loader {
+        height: 800px;
+
+    }
+
+    .arrow {
+        left: 43%;
+    }
+
+}
