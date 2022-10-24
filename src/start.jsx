@@ -7,8 +7,9 @@ const Start = () => {
         <>
         <BrowserRouter>
         <Routes>
-            <Route path="*" element={<Loader />}/>
+            
             <Route path="/App" element={<App />} />
+            <Route path="/" element={<Loader />}/>
         </Routes>
       </BrowserRouter>
       </>
