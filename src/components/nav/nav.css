@@ -25,6 +25,7 @@
 
  .navi a:hover {
     background: rgba(0,0,0,0.3);
+    transform: rotate(-360deg);
  }
 
  .navi a.active {
