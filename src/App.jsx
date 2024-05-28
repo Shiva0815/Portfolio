@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './components/header/Header'
 import Nav from './components/nav/Nav'
 import About from './components/about/About'
@@ -8,19 +8,23 @@ import Portfolio from './components/portfolio/Portfolio'
 import Testimonials from './components/testimonials/Testimonials'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
+import { tokenGenrate } from './components/api/api'
 
 const App = () => {
+  useEffect(() => {
+    tokenGenrate()
+  }, [])
   return (
     <>
-      <Header/>
-      <Nav/>
-      <About/>
-      <Experience/>
-      <Service/>
-      <Portfolio/>
-      <Testimonials/>
-      <Contact/>
-      <Footer/>
+      <Header />
+      <Nav />
+      <About />
+      <Experience />
+      <Service />
+      <Portfolio />
+      {/* <Testimonials/> */}
+      <Contact />
+      <Footer />
     </>
   )
 }

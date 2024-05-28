@@ -1,6 +1,12 @@
 import React from "react"
-import ReactDOM from "react-dom"
+import { createRoot } from "react-dom/client";
 import Start from './start'
 import './index.css'
 
-ReactDOM.render(<Start/>,document.querySelector("#root"))
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+root.render(
+//   <React.StrictMode>
+    <Start />
+//   </React.StrictMode>
+);
