@@ -8,12 +8,8 @@ import Portfolio from './components/portfolio/Portfolio'
 import Testimonials from './components/testimonials/Testimonials'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
-import { tokenGenrate } from './components/api/api'
 
 const App = () => {
-  useEffect(() => {
-    tokenGenrate()
-  }, [])
   return (
     <>
       <Header />

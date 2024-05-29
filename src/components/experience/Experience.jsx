@@ -8,30 +8,21 @@ const Experience = () => {
   const [backdata, setBackdata] = useState([])
 
   useEffect(() => {
-    frontdataCheck(sessionStorage.getItem('access_token'))
-    backdataCheck(sessionStorage.getItem('access_token'))
+    frontdataCheck()
+    backdataCheck()
   }, [])
 
-  const frontdataCheck = (token) => {
-    let payload = JSON.stringify({
-      "collection": "experience_frontend",
-      "database": "portfolio",
-      "dataSource": "Cluster0",
-      "projection": {}
-    });
+  const frontdataCheck = () => {
     let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'https://ap-south-1.aws.data.mongodb-api.com/app/data-mkzhb/endpoint/data/v1/action/find',
+      method: 'GET',
+      url: 'https://shivangportfoliobackend.vercel.app/experience_frontend',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Content-Type': 'text/html; charset=utf-8',
       },
-      data: payload
     };
     axios.request(config)
       .then((response) => {
-        setFrontdata(response?.data?.documents);
+        setFrontdata(response?.data);
       })
       .catch((error) => {
         console.log(error);
@@ -39,25 +30,16 @@ const Experience = () => {
   }
 
   const backdataCheck = (token) => {
-    let payload = JSON.stringify({
-      "collection": "experience_backend",
-      "database": "portfolio",
-      "dataSource": "Cluster0",
-      "projection": {}
-    });
     let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'https://ap-south-1.aws.data.mongodb-api.com/app/data-mkzhb/endpoint/data/v1/action/find',
+      method: 'GET',
+      url: 'https://shivangportfoliobackend.vercel.app/experience_backend',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Content-Type': 'text/html; charset=utf-8',
       },
-      data: payload
     };
     axios.request(config)
       .then((response) => {
-        setBackdata(response?.data?.documents);
+        setBackdata(response?.data);
       })
       .catch((error) => {
         console.log(error);

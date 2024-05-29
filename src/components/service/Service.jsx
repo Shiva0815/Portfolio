@@ -13,30 +13,23 @@ const Service = () => {
 
 
   const serviceCheck = (token) => {
-    let payload = JSON.stringify({
-      "collection": "service",
-      "database": "portfolio",
-      "dataSource": "Cluster0",
-      "projection": {}
-    });
     let config = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'https://ap-south-1.aws.data.mongodb-api.com/app/data-mkzhb/endpoint/data/v1/action/findOne',
+      method: 'GET',
+      url: 'https://shivangportfoliobackend.vercel.app/service',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Content-Type': 'text/html; charset=utf-8',
       },
-      data: payload
     };
     axios.request(config)
       .then((response) => {
-        setService(response?.data?.document);
+        setService(response?.data[0]);
       })
       .catch((error) => {
         console.log(error);
       });
   }
+
+  console.log(service)
   
   return (
     <section id="services">
