@@ -8,11 +8,11 @@ const Service = () => {
   const [service, setService] = useState([])
 
   useEffect(() => {
-    serviceCheck(sessionStorage.getItem('access_token'))
+    serviceCheck()
   }, [])
 
 
-  const serviceCheck = (token) => {
+  const serviceCheck = () => {
     let config = {
       method: 'GET',
       url: 'https://shivangportfoliobackend.vercel.app/service',
